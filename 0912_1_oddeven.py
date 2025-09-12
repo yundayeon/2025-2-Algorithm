@@ -50,9 +50,32 @@ def f4():
     evenSum = 50*(2+100) // 2
             
     print(f"방법4 : 홀수합 {oddSum}, 짝수합 {evenSum}")
+
+#방법5: 리스트 함축(내포, list comprehension) -> 제일 파이썬스러운 방법
+def f5():
+    oList = [i for i in range(101) if i%2 == 1]
+    eList = [i for i in range(101) if i%2 == 1]
+    oddSum = sum(oList)
+    evenSum = sum(eList)
+    print(f"방법5 : 홀수합 {oddSum}, 짝수합 {evenSum}")
     
+#방법6: 
+def f6():
+    totalList = [i for i in range(101)]
+    eList = [i if i % 2 == 0 else 0 for i in totalList]
+    
+    eList = list(set(eList)) #set은 중복값을 허용하지 않음.
+    if 0 in eList:
+        eList.remove(0)
+    evenSum = sum(eList)
+    oddSum = sum(totalList) - evenSum
+    print(f"방법6 : 홀수합 {oddSum}, 짝수합 {evenSum}")
+    
+
 if __name__ == "__main__":
     f1()
     f2()
     f3()
     f4()
+    f5()
+    f6()
