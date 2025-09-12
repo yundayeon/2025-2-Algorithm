@@ -53,11 +53,14 @@ def f4():
 
 #방법5: 리스트 함축(내포, list comprehension) -> 제일 파이썬스러운 방법
 def f5():
+    #리스트 함축 [ for if ] [if else for] -> 중간고사에 무조건 리스트 함축 나옴!   
     oList = [i for i in range(101) if i%2 == 1]
     eList = [i for i in range(101) if i%2 == 1]
     oddSum = sum(oList)
     evenSum = sum(eList)
     print(f"방법5 : 홀수합 {oddSum}, 짝수합 {evenSum}")
+    
+
     
 #방법6: 
 def f6():
@@ -71,11 +74,19 @@ def f6():
     oddSum = sum(totalList) - evenSum
     print(f"방법6 : 홀수합 {oddSum}, 짝수합 {evenSum}")
     
-
-if __name__ == "__main__":
-    f1()
+#파이썬 싱글톤(singleton)
+def f7():
+    for i in range(-10,0):
+        a=i
+        print("%i: %s" %(i,a is int(str(i))))
+    for i in range(250,260):
+        a=i
+        print("%i: %s" %(i,a is int(str(i))))
+    
+    
     f2()
     f3()
     f4()
     f5()
     f6()
+    f7()
