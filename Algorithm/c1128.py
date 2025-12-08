@@ -173,6 +173,8 @@ def example2():
     print(count -1, max_distance)
     
     
-    
 if __name__ == "__main__":
     main()
+    
+    sys.stdin.close()
+    sys.stdout.close()
